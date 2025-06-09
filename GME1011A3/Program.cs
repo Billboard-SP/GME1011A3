@@ -68,8 +68,20 @@ namespace GME1011A3
 
                 //hero deals damage first
                 Console.WriteLine(hero.GetName() + " is attacking enemy #" + (indexOfEnemy+1) + " of " + numBaddies + ". Eek, it's a " + baddies[indexOfEnemy].GetType().Name);
-                int heroDamage = hero.DealDamage();  //how much damage?
-                Console.WriteLine("Hero deals " + heroDamage + " heroic damage."); 
+                int heroDamage = 0;
+
+                if (hero is Fighter fighter)
+                {
+                    heroDamage = fighter.Berserk();
+                    if (heroDamage == 0)
+                        heroDamage = fighter.DealDamage();
+                }
+                else
+                {
+                    heroDamage = hero.DealDamage();
+                }
+
+                Console.WriteLine("Hero deals " + heroDamage + " heroic damage.");
                 baddies[indexOfEnemy].TakeDamage(heroDamage); //baddie takes the damage
 
 
