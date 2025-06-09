@@ -22,8 +22,8 @@ namespace GME1011A3
             Fighter hero = new Fighter(health, name, strength); //TODO: Get these arguments from the user - health, name, strength
             Console.WriteLine("Here is our heroic hero: " + hero + "\n\n");
 
-
-            int numBaddies = 5; //TODO: Get number of baddies from the user
+            Console.Write("Enter number of baddies: ");
+            int numBaddies = int.Parse(Console.ReadLine()); //TODO: Get number of baddies from the user
             int numAliveBaddies = numBaddies;
 
 
