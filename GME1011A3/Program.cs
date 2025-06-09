@@ -80,9 +80,15 @@ namespace GME1011A3
 
                 if (hero is Fighter fighter)
                 {
-                    heroDamage = fighter.Berserk();
-                    if (heroDamage == 0)
+                    if (rng.NextDouble() < 0.33)  // 33% chance to use special
+                    {
+                        heroDamage = fighter.Berserk();
+                        Console.WriteLine("Fighter uses BERSERK! Massive damage incoming!");
+                    }
+                    else
+                    {
                         heroDamage = fighter.DealDamage();
+                    }
                 }
                 else
                 {
