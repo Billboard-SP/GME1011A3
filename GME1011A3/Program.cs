@@ -19,7 +19,8 @@ namespace GME1011A3
 
 
             //TODO: change this so that it can contain goblins and skellies! Just change the type of the list!!
-            List<Goblin> baddies = new List<Goblin>();
+
+            List<Minion> baddies = new List<Minion>();
 
 
 
