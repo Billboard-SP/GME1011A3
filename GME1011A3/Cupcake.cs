@@ -29,5 +29,17 @@ namespace GME1011A3
             Random rng = new Random();
             return rng.Next(1, _frosting + 2);
         }
+
+        public int SugarRush()
+        {
+            Console.WriteLine("**SUGAR RUSH!**");
+            Random rng = new Random();
+            return rng.Next(10, 15) + _frosting;
+        }
+
+        public override string ToString()
+        {
+            return "Cupcake[" + base.ToString() + ", frosting: " + _frosting + "]";
+        }
     }
 }
