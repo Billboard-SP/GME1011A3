@@ -39,18 +39,23 @@ namespace GME1011A3
                 //TODO: each baddie should have 50% chance of being a goblin, 50% chance of
                 //being a skellie. A skellie should have random health between 25 and 30, and 0 armour (remember
                 //skellie armour is 0 anyway)
-                if (rng.NextDouble() < 0.5) //50% chance
+                double roll = rng.NextDouble();
+
+                if (roll < 0.33)
                 {
-                    //goblin
+                    // Goblin: 33%
                     baddies.Add(new Goblin(rng.Next(30, 36), rng.Next(1, 6), rng.Next(1, 11)));
+                }
+                else if (roll < 0.66)
+                {
+                    // Skellie: 33%
+                    baddies.Add(new Skellie(rng.Next(25, 31), 0));
                 }
                 else
                 {
-                    //skellies with 25 to 30 health with 0 armor
-                    baddies.Add(new Skellie(rng.Next(25, 31), 0));
+                    // Cupcake: 33%
+                    baddies.Add(new Cupcake(rng.Next(20, 26), rng.Next(0, 3), rng.Next(1, 5)));
                 }
-            
-            
             }
 
             //this should work even after you make the changes above
