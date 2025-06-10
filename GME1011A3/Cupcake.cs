@@ -23,5 +23,11 @@ namespace GME1011A3
             if (adjusted < 0) adjusted = 0;
             _health -= adjusted;
         }
+
+        public override int DealDamage()
+        {
+            Random rng = new Random();
+            return rng.Next(1, _frosting + 2);
+        }
     }
 }
