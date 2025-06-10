@@ -11,7 +11,9 @@ namespace GME1011A3
         //Constructor
         public Cupcake(int health, int armor, int frosting) : base(health, armor)
         {
-
+            if (frosting < 1 || frosting > 10)
+                frosting = 5;
+            _frosting = frosting;
         }
     }
 }
