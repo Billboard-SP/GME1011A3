@@ -8,8 +8,11 @@ namespace GME1011A3
 {
     internal class Cupcake : Minion
     {
+
+        private int _frosting;
+
         //Constructor
-        public Cupcake(int health, int armor, int frosting) : base(health, armor)
+        public Cupcake(int health, int armour, int frosting) : base(health, armour)
         {
             if (frosting < 1 || frosting > 10)
                 frosting = 5;
@@ -19,7 +22,7 @@ namespace GME1011A3
         public override void TakeDamage(int damage)
         {
             int reduction = _frosting / 2;
-            int adjusted = damage - (_armor + reduction);
+            int adjusted = damage - (_armour + reduction);
             if (adjusted < 0) adjusted = 0;
             _health -= adjusted;
         }
