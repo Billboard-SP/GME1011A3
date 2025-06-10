@@ -15,5 +15,13 @@ namespace GME1011A3
                 frosting = 5;
             _frosting = frosting;
         }
+
+        public override void TakeDamage(int damage)
+        {
+            int reduction = _frosting / 2;
+            int adjusted = damage - (_armor + reduction);
+            if (adjusted < 0) adjusted = 0;
+            _health -= adjusted;
+        }
     }
 }
